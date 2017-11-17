@@ -1,10 +1,3 @@
-angular.module("wmodal", ["wmodal_spinner.html", "wmodal_service", "wmodal_modal.html"]);
-angular.module("wmodal_spinner.html", []).run(["$templateCache", function($templateCache) {
-	$templateCache.put("wmodal_spinner.html", "<div></div>");
-}]);
-angular.module("wmodal_modal.html", []).run(["$templateCache", function($templateCache) {
-	$templateCache.put("wmodal_modal.html", "<div class='modal'><button>Close</button><ng-transclude>This is the default content of the modal</ng-transclude></div>");
-}]);
 angular.module("wmodal_service", [])
 .service('wmodal', function($compile, $rootScope){
 	"ngInject";
