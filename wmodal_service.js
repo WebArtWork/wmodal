@@ -49,15 +49,17 @@ angular.module("wmodal_service", [])
 		this.modal = function(obj){
 			addModal(obj, 'wmodal');
 		}
-		this.fwmodal = function(obj){
+		this.fmodal = function(obj){
 			addModal(obj, 'fwmodal');
 		}
 	/*
 	*	Morphs
 	*/
+
 	/*
 	*	Popups
 	*/
+	
 	/*
 	*	Spinners
 	*/
