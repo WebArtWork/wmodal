@@ -3,10 +3,10 @@ angular.module("wmodal_spinner.html", []).run(["$templateCache", function($templ
 	$templateCache.put("wmodal_spinner.html", "<div></div>");
 }]);
 angular.module("wmodal_modal.html", []).run(["$templateCache", function($templateCache) {
-	$templateCache.put("wmodal_modal.html", "<div class='modal'><div class='modal_fade' ng-click='close(); $root.bodyScrollHidden=false'></div><div class='modal_content viewer'><i class='icon icon-close close-m' ng-click='close(); $root.bodyScrollHidden=false'></i><ng-transclude>This is the default content of the modal</ng-transclude></div></div>");
+	$templateCache.put("wmodal_modal.html", "<div class='modal'><div class='modal_fade' ng-click='close(); $root.bodyScrollHidden=false' title='Close'></div><div class='modal_content viewer'><i class='icon icon-close close-m' ng-click='close(); $root.bodyScrollHidden=false' title='Close'></i><ng-transclude>This is the default content of the modal</ng-transclude></div></div>");
 }]);
 angular.module("wmodal_fmodal.html", []).run(["$templateCache", function($templateCache) {
-	$templateCache.put("wmodal_fmodal.html", "<div class='modal'><div class='modal_fade' ng-click='close(); $root.bodyScrollHidden=false'></div><div class='modal_content viewer'><i class='icon icon-close close-m' ng-click='close(); $root.bodyScrollHidden=false'></i><ng-transclude>This is the default content of the modal</ng-transclude></div></div>");
+	$templateCache.put("wmodal_fmodal.html", "<div class='modal m_viwer'><div class='modal_viewer '><i class='icon icon-close close-m' ng-click='close(); $root.bodyScrollHidden=false' title='Close'></i><ng-transclude>This is the default content of the modal</ng-transclude></div></div>");
 }]);
 angular.module("wmodal_service", [])
 .service('wmodal', function($compile, $rootScope){
@@ -59,15 +59,17 @@ angular.module("wmodal_service", [])
 		this.modal = function(obj){
 			addModal(obj, 'wmodal');
 		}
-		this.fwmodal = function(obj){
+		this.fmodal = function(obj){
 			addModal(obj, 'fwmodal');
 		}
 	/*
 	*	Morphs
 	*/
+
 	/*
 	*	Popups
 	*/
+	
 	/*
 	*	Spinners
 	*/
