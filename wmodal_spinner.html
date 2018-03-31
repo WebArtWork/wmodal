@@ -1,1 +1,9 @@
-<div></div>
+<div class='modal cover'>
+	<div class='modal_fade' ng-click='close();' title='Close'></div>
+	<div class='modal_content viewer'>
+		<i class='icon icon-close close-m' ng-click='close();' title='Close'></i>
+		<ng-transclude>
+			DEFAULT SPINNER
+		</ng-transclude>
+	</div>
+</div>
