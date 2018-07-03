@@ -5,8 +5,8 @@ angular.module("wmodal_service", [])
 	*	Modals
 	*/
 		this.modals = [];
-		this.modal_link = (scope, el)=>{
-			scope.close = ()=>{
+		this.modal_link = function(scope, el){
+			scope.close = function(){
 				for (var i = 0; i < this.modals.length; i++) {
 					if(this.modals[i].id==scope.id){
 						this.modals.splice(i, 1);
@@ -30,9 +30,9 @@ angular.module("wmodal_service", [])
 				}
 			}
 		}
-		this.modal = (obj)=>{
+		this.modal = function(obj){
 			if(!obj.id) obj.id = Date.now();
-			let modal = '<wmodal id="'+obj.id+'">';
+			var modal = '<wmodal id="'+obj.id+'">';
 			if(obj.template) modal += obj.template;
 			else if(obj.templateUrl){
 				modal += '<ng-include src="';
@@ -41,7 +41,7 @@ angular.module("wmodal_service", [])
 			}
 			modal += '</wmodal>';
 			this.modals.push(obj);
-			let body = angular.element(document).find('body').eq(0);
+			var body = angular.element(document).find('body').eq(0);
 			body.append($compile(angular.element(modal))($rootScope));
 			angular.element(document).find('html').addClass('noscroll');
 		}
@@ -53,8 +53,8 @@ angular.module("wmodal_service", [])
 	*	Popups
 	*/
 		this.popups = [];
-		this.popup_link = (scope, el)=>{
-			scope.close = ()=>{
+		this.popup_link = function(scope, el){
+			scope.close = function(){
 				for (var i = 0; i < this.popups.length; i++) {
 					if(this.popups[i].id==scope.id){
 						this.popups.splice(i, 1);
@@ -78,9 +78,9 @@ angular.module("wmodal_service", [])
 				}
 			}
 		}
-		this.popup = (obj)=>{
+		this.popup = function(obj){
 			if(!obj.id) obj.id = Date.now();
-			let modal = '<wpopup id="'+obj.id+'">';
+			var modal = '<wpopup id="'+obj.id+'">';
 			if(obj.template) modal += obj.template;
 			else if(obj.templateUrl){
 				modal += '<ng-include src="';
@@ -89,7 +89,7 @@ angular.module("wmodal_service", [])
 			}
 			modal += '</wpopup>';
 			this.modals.push(obj);
-			let body = angular.element(document).find('body').eq(0);
+			var body = angular.element(document).find('body').eq(0);
 			body.append($compile(angular.element(modal))($rootScope));
 			angular.element(document).find('html').addClass('noscroll');
 		}
@@ -97,8 +97,8 @@ angular.module("wmodal_service", [])
 	*	Spinners
 	*/
 		this.spinners = [];
-		this.spinner_link = (scope, el)=>{
-			scope.close = ()=>{
+		this.spinner_link = function(scope, el){
+			scope.close = function(){
 				for (var i = 0; i < this.spinners.length; i++) {
 					if(this.spinners[i].id==scope.id){
 						this.spinners.splice(i, 1);
@@ -122,9 +122,9 @@ angular.module("wmodal_service", [])
 				}
 			}
 		}
-		this.spinner = (obj)=>{
+		this.spinner = function(obj){
 			if(!obj.id) obj.id = Date.now();
-			let modal = '<wspinner id="'+obj.id+'">';
+			var modal = '<wspinner id="'+obj.id+'">';
 			if(obj.template) modal += obj.template;
 			else if(obj.templateUrl){
 				modal += '<ng-include src="';
@@ -133,7 +133,7 @@ angular.module("wmodal_service", [])
 			}
 			modal += '</wspinner>';
 			this.spinners.push(obj);
-			let body = angular.element(document).find('body').eq(0);
+			var body = angular.element(document).find('body').eq(0);
 			body.append($compile(angular.element(modal))($rootScope));
 			angular.element(document).find('html').addClass('noscroll');
 		}
